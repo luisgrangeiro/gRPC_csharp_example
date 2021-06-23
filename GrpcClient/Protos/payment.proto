@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcClient";
+
+package payment;
+
+// The greeting service definition.
+service Payment {
+
+  rpc DoPayment (PaymentRequest) returns (PaymentResponse);
+}
+
+message PaymentRequest {
+  int32 Id  = 1;
+  string Reference = 2;
+  int32 Amount = 3;
+}
+
+message PaymentResponse{
+	string Status = 1;
+}
